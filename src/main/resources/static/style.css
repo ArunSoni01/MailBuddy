@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    background: #f3f8fc;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+    margin: 40px auto;   /* centers horizontally & gives top spacing */
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f92d0;
+}
+
+p.subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #606c76;
+}
+
+label {
+    display: block;
+    margin-top: 25px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+textarea {
+    width: 94%;
+    height: 100px;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: none;
+    background: #c5c7c9;
+    font-size: 15px;
+    resize: none;
+}
+
+select{
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: none;
+    background: #c5c7c9;
+    font-size: 15px;
+}
+
+.button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+}
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(to right, #0ea5e9, #14b8a6);
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Output style (hidden until show) */
+#resultBox {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f8f9fb;
+    border-radius: 10px;
+    border-left: 4px solid #1f92d0;
+    text-align: left;
+    display: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+/* Reset button style */
+.reset-btn {
+    background: #e63946;
+}
+.reset-btn:hover {
+    background: #d62828;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Response</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>AI Email Response</h2>
+    <p class="subtitle">Enter information below</p>
+
+    <!-- Label associated with textarea -->
+    <label for="emailContent">Email Content</label>
+    <textarea id="emailContent" placeholder="Enter email content"></textarea>
+
+    <!-- Label associated with select -->
+    <label for="tone">Tone</label>
+    <select id="tone">
+        <option value="" selected disabled>Select this</option>
+        <option value="professional">Professional</option>
+        <option value="friendly">Friendly</option>
+        <option value="formal">Formal</option>
+    </select>
+
+    <div class="button-group">
+        <button onclick="handleSubmit()">Submit</button>
+        <button class="reset-btn" onclick="resetForm()">Reset</button>
+    </div>
+
+    <div id="resultBox"></div>
+</div>
+
+<script>
+    function handleSubmit() {
+
+        const emailContent = document.getElementById("emailContent").value;
+        const tone = document.getElementById("tone").value;
+
+        const request = {
+            emailContent: emailContent,
+            tone: tone
+        };
+
+        const box = document.getElementById("resultBox");
+        box.style.display = "block";
+        box.textContent = "Generating reply... Please wait...";
+
+        fetch("http://localhost:8080/api/email/generate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(request)
+        })
+        .then(response => response.text())
+        .then(data => {
+            box.textContent = data;
+        })
+        .catch(error => {
+            box.textContent = "Error: " + error;
+        });
+    }
+
+    function resetForm() {
+        document.getElementById("emailContent").value = "";
+        document.getElementById("tone").value = "";
+
+        const box = document.getElementById("resultBox");
+        box.style.display = "none";
+        box.textContent = "";
+
+        window.scrollTo(0, 0); // scroll to top on reset
+    }
+</script>
+
+</body>
+</html>
