@@ -38,7 +38,7 @@ Users simply enter the email content and optionally choose a tone, and MailBuddy
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
