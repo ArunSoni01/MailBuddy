@@ -49,7 +49,7 @@
         box.style.display = "block";
         box.textContent = "Generating reply... Please wait...";
 
-        fetch("http://localhost:8080/api/email/generate", {
+        fetch("https://mailbuddy-production.up.railway.app/api/email/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
